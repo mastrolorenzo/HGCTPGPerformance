@@ -15,4 +15,6 @@ class parameters :
         self.minPt_gen = float(7.0) # in GeV
         self.particle_type = int(11)
         self.particle_status = int(1)
+        self.maxNEvts = 5000
+        self.dRmatch = int(0.5)
         

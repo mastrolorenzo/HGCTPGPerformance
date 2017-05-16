@@ -17,3 +17,9 @@ def deltaR( eta1, eta2, phi1, phi2) :
     dEta = deltaEta(eta1, eta2)
     dPhi = deltaPhi(phi1, phi2)
     return m.sqrt(dEta*dEta+dPhi*dPhi)
+
+def sinTheta( eta ) : 
+    return m.sin( 2*m.atan(m.exp(-abs(eta))))
+
+def returnPtFromE( energy, eta ) :
+    return energy / m.cosh( eta )

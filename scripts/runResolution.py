@@ -11,15 +11,22 @@ def main(input_file, output_file):
     conf = parameters()
     conf.minEta_C3d = 1.47
     conf.maxEta_C3d = 3.0
-    conf.minPt_C3d = 5.0 
+    conf.minPt_C3d = 7.0 
     conf.minEta_gen = 1.47
     conf.maxEta_gen = 3.0
-    conf.minPt_gen = 5.0
+    conf.minPt_gen = 7.0
     conf.particle_type = 22
     conf.particle_status = 1
+    conf.maxNEvts = 5000
+    conf.dRmatch = 0.5
 
-    resolution(input_file, output_file, conf).plotResponse()
-        
+    # customization of the parameter for tc-only studies
+    conf.tc_threshold = 2.0
+
+#    resolution(input_file, output_file, conf).plotResponse()
+#    resolution(input_file, output_file, conf).plotResponseTC()
+    resolution(input_file, output_file, conf).plotResponseCheck()   
+    
     return
 
 if __name__=='__main__':
